@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "E:\\mingw\\mingw64\\bin\\mingw32-make.exe BASE_DIR=${workspaceFolder}\\ compile",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "upload",
+            "type": "shell",
+            "command": "E:\\mingw\\mingw64\\bin\\mingw32-make.exe BASE_DIR=${workspaceFolder}\\ upload",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "build and upload",
+            "dependsOn": [
+                "build",
+                "upload"
+            ],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+    ]
+}
